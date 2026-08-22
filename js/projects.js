@@ -23,14 +23,14 @@ const PROJECTS = [
     year:    "2026",
     type:    "model",
     tools:   "R, evoregion analysis, phylogenetic turnover, niche modelling",
-    coords:  [-2.33, 34.83],
+    coords:  [0, 24.83],
     url:     ""
   },
   {
     title:   "Pollination under climate extremes, California",
     outcome: "Found that bees and the flowers they depend on become vulnerable in different places and at different times of year — so conservation timed to the bees alone misses half the problem.",
     year:    "2024 – present",
-    type:    "applied",
+    type:    "model",
     tools:   "R, Python, Google Earth Engine, species distribution models",
     coords:  [37.30, -120.48],
     url:     "project-pollination.html"
@@ -45,12 +45,12 @@ const PROJECTS = [
     url:     ""
   },
   {
-    title:   "Range maps for the Handbook of the Mammals of South America",
+    title:   "Range maps for the Handbook of the Mammals of Middle and South America",
     outcome: "Automated publication-grade range maps for more than 2,000 species across ten volumes, replacing hand-drawn cartography with a reproducible pipeline.",
     year:    "2024 – present",
     type:    "applied",
     tools:   "R, GIS automation, Springer Nature",
-    coords:  [-4.00, -60.00],
+    coords:  [15.00, -90.00],
     url:     ""
   },
   {
@@ -59,7 +59,7 @@ const PROJECTS = [
     year:    "2020 – present",
     type:    "applied",
     tools:   "Shiny, R, SQL, AWS, Google Drive API",
-    coords:  [-38.00, -64.00],
+    coords:  [-30.00, -64.00],
     url:     "https://doi.org/10.1016/j.jnc.2024.126759"
   },
   {
@@ -68,15 +68,41 @@ const PROJECTS = [
     year:    "2020 – 2022",
     type:    "model",
     tools:   "R, spatial prioritization, IUCN range data",
-    coords:  [-41.13, -71.31],
+    coords:  [-8.13, -60.31],
     url:     "https://doi.org/10.1016/j.biocon.2021.109045"
+  }, 
+  {
+    title:   "A decade of fieldwork experience",
+    outcome: "More than fourteen field sites across Colombia, Argentina, and California — camera traps, mist nets, live trapping, and community interviews. Spanning a wide variety of latitudes,  ecosystems, and sampled organisms.",
+    year:    "2014 – present",
+    type:    "field",
+    tools:   "Camera traps, mist nets, Sherman traps, community surveys",
+    coords:  [
+      /* Colombia */
+      [  3.42, -76.52],   // Valle del Cauca — Minas Lili, Cali
+      [  4.70, -75.60],   // Central Cordillera — Caenolestes gradient
+      [  5.90, -74.60],   // Magdalena Medio
+      [  9.24, -74.76],   // Bajo Magdalena
+      [  4.15, -72.00],   // Llanos — tapir camera traps
+      [  1.10, -77.15],   // Laguna de La Cocha, Pasto (Nariño)
+      [  3.89, -77.07],   // Buenaventura (Pacific coast)
+      [  5.22, -76.03],   // Pueblo Rico, Risaralda–Chocó
+      /* California */
+      [ 37.48, -119.97],  // Sierra Nevada, near Mariposa
+      /* Argentina */
+      [-36.62,  -64.29],  // La Pampa
+      [-42.91,  -71.31],  // Esquel, Chubut
+      [-42.87,  -71.62],  // South of Lago Futalaufquen, Los Alerces
+      [-42.09,  -71.60]   // Lago Puelo
+    ],
+    url:     ""
   }
 ];
 
 /* Marker styling per type. Keep in sync with the .swatch
    colours in css/site.css if you change them. */
 const MARKER_STYLE = {
-  field:   { color: "#16211F", fillColor: "#D6336C", shape: "circle" },
-  model:   { color: "#16211F", fillColor: "#1F5F5B", shape: "square" },
-  applied: { color: "#16211F", fillColor: "#FBFCFA", shape: "diamond" }
+  field:   { color: "#16211F", fillColor: "#D6336C", shape: "circle", z: 1000},
+  model:   { color: "#16211F", fillColor: "#1F5F5B", shape: "square", z: 0 },
+  applied: { color: "#16211F", fillColor: "#FBFCFA", shape: "diamond", z: 0 }
 };

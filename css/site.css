@@ -475,3 +475,10 @@ p { margin: 0 0 1.15em; max-width: var(--measure); }
   z-index: 999;
 }
 .skip:focus { left: 0; }
+/* Small flag beside the name */
+.flag {
+  height: 0.5em;
+  width: auto;
+  vertical-align: 0.08em;
+  border: 0.5px solid var(--rule);
+}

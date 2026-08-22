@@ -43,24 +43,43 @@
     PROJECTS.forEach(function (p, i) {
       const style = MARKER_STYLE[p.type] || MARKER_STYLE.field;
 
-      // Build the marker as a small HTML shape so it can match
-      // the swatches in the legend list below.
-      const marker = L.marker(p.coords, {
+      // coords can be a single pair — [lat, lng] — or a list of pairs
+      // for projects that span several sites. Normalise to a list.
+      const points = Array.isArray(p.coords[0]) ? p.coords : [p.coords];
+
+      // Multi-site projects get smaller pins so a dense cluster doesn't
+      // visually outweigh the single-site projects on the map.
+      const size = points.length > 6 ? 9 : (points.length > 1 ? 10 : 13);
+
+      points.forEach(function (point) {
+        addMarker(point, p, i, style, size);
+      });
+
+      points.forEach(function (point) { bounds.push(point); });
+    });
+
+
+    /* Creates one pin. Called once per coordinate pair. */
+    function addMarker(point, p, i, style, size) {
+
+      const marker = L.marker(point, {
         icon: L.divIcon({
           className: "",
           html:
             '<span style="' +
-            "display:block;width:13px;height:13px;" +
+            "display:block;width:" + size + "px;height:" + size + "px;" +
             "background:" + style.fillColor + ";" +
             "border:1.5px solid " + style.color + ";" +
             "box-shadow:0 2px 6px -1px rgba(22,33,31,.45);" +
             (style.shape === "circle"  ? "border-radius:50%;" : "") +
             (style.shape === "diamond" ? "transform:rotate(45deg);" : "") +
             '"></span>',
-          iconSize: [13, 13],
-          iconAnchor: [7, 7]
+          iconSize: [size, size],
+          iconAnchor: [size / 2, size / 2]
         }),
         keyboard: true,
+        zIndexOffset: style.z || 0,
+        riseOnHover: true,
         title: p.title
       }).addTo(map);
 
@@ -92,9 +111,7 @@
         marker.closePopup();
         scrollToProject(i);
       });
-
-      bounds.push(p.coords);
-    });
+    }
 
     // Frame all the pins, with room for the legend card.
     if (bounds.length > 1) {
