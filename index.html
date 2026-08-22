@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Baltazar González — Biologist, biogeographer, programmer</title>
+<meta name="description" content="Postdoctoral researcher at UC Merced working on how species and their interactions reorganize under climate change, and building the reproducible tools that turn that work into conservation decisions.">
+
+<!-- How the link looks when shared on Slack, LinkedIn, WhatsApp -->
+<meta property="og:title" content="Baltazar González — Biologist, biogeographer, programmer">
+<meta property="og:description" content="How species and their interactions reorganize under climate change — and the tools that turn that into conservation decisions.">
+<meta property="og:image" content="https://baltazargonzalez.com/img/share.jpg">
+<meta property="og:url" content="https://baltazargonzalez.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="img/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="masthead__name" href="index.html">Baltazar González</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ====== HERO: the map opens the page ====================== -->
+  <section class="hero" aria-label="Where I work">
+    <div id="hero-map" tabindex="0" role="application" aria-label="Map of project locations across the Americas"></div>
+
+    <div class="legend-card">
+      <p class="legend-card__role">Biologist · Biogeographer · Programmer</p>
+      <h1>Baltazar González</h1>
+      <p class="legend-card__line">
+        I work on how climate reshapes species and their interactions across 
+        scales that rarely meet: a single bee's foraging season, and 3.3 million
+        years of carnivore biogeographic history. I've specialized in building 
+        the automated, robust pipelines those analyses run on — and turning them
+        into results, maps, and tools that hold up in research, conservation, and policy.
+      </p>
+      <div class="legend-card__meta">
+        <a href="mailto:baltazargch@gmail.com">Email</a>
+        <a href="https://github.com/baltazargch">GitHub</a>
+        <a href="https://scholar.google.com/citations?user=XXXX">Scholar</a>
+        <a href="cv.pdf">CV (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== WORK ============================================== -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <p class="eyebrow">Selected work</p>
+
+      <div class="legend-key" aria-hidden="true">
+        <span class="legend-key__item"><span class="swatch swatch--field"></span>Field &amp; systematics</span>
+        <span class="legend-key__item"><span class="swatch swatch--model"></span>Modelling</span>
+        <span class="legend-key__item"><span class="swatch swatch--applied"></span>Applied / commissioned</span>
+      </div>
+
+      <!-- Filled in automatically from js/projects.js -->
+      <div class="projects" id="project-list"></div>
+    </div>
+  </section>
+
+
+  <!-- ====== ABOUT ============================================= -->
+  <section class="section" id="about" style="background: var(--paper-2);">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+
+      <div class="two-col">
+        <div class="prose">
+          <p>
+            I'm a postdoctoral researcher at the University of California,
+            Merced. My work asks how ecological and evolutionary processes
+            shift across space and time as the climate changes — right now
+            using pollination and seed dispersal as model systems, because
+            both underpin biodiversity and food production, and both can
+            fail quietly before anyone notices.
+          </p>
+          <p>
+            I trained as a field biologist. My doctorate at the Universidad
+            Nacional de La Plata revised the systematics and biogeography of
+            the shrew-opossums, an entire order of Andean marsupials, and
+            before that I spent years running camera traps, mist nets, and
+            conservation work surveys across Colombia. That background is why I care
+            less about model elegance than about whether a result is relevant for
+            current conservation and sustainability policies.
+          </p>
+          <p>
+            The other half of what I do is programming. I build the
+            automated, reproducible workflows that large biodiversity
+            projects need and rarely have: range-map pipelines for a
+            ten-volume mammal handbook, Shiny platforms where dozens of
+            specialists curate national conservation assessments, report
+            generation that used to take months. I've done this for Springer
+            Nature, for Sociedad Argentina para el Estudio de los Mamiferos, 
+            for Argentina's Ministry of Environment, for the FABLE
+            Consortium, and for the Wildlife Conservation Society.
+          </p>
+          <p>
+            I'm looking at both academic positions and applied roles in
+            conservation and environmental organisations — anywhere the
+            analysis feeds directly into what gets protected, funded, or
+            monitored. I work in Spanish and English, and I've done fieldwork
+            and consulting across Colombia, Argentina, and the United States.
+          </p>
+        </div>
+
+        <div>
+          <img class="portrait" src="img/portrait.jpg"
+               alt="Portrait of Baltazar González"
+               width="600" height="750">
+
+          <ul class="tool-list" style="margin-top: 1.6rem;">
+            <li><span>Languages</span><span>Spanish, English</span></li>
+            <li><span>Programming</span><span>R, Python, JavaScript, SQL</span></li>
+            <li><span>Geospatial</span><span>QGIS, GEE, ArcGIS, R, Python</span></li>
+            <li><span>Web apps</span><span>Shiny, Flask, React, HTML5</span></li>
+            <li><span>Field methods</span><span>Camera traps, mist nets, live trapping</span></li>
+            <li><span>Design</span><span>Inkscape, Illustrator, GIMP</span></li>
+            <li><span>Based in</span><span>Merced, California</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====== WRITING / PUBLICATIONS ============================ -->
+  <section class="section" id="writing">
+    <div class="wrap">
+      <p class="eyebrow">Selected publications</p>
+
+      <ol class="pubs">
+        <li>
+          <span class="pub__me">González, B.</span>, Argueta-Guzmán, M.P., Mora-Sibaja, J., Salerno, V., Tang, A., Crall, J.D., McFrederick, Q. &amp; Gaiarsa, M.P.
+          Climate-driven shifts in bee and floral vulnerability alter when and where conservation is needed.
+          <span class="pub__venue mono">Communications Biology · in revision, 2026</span>
+        </li>
+        <li>
+          Salerno, V., Tang, A.T.So., Mora, J., Argueta-Guzmán, M., <span class="pub__me">González, B.</span>, Peterson, S.S., McFrederick, Q.S., Gaiarsa, M.P. &amp; Crall, J. (2026).
+          osmiaCAM: a low-cost imaging system for linking solitary bee foraging, nest provisioning, and environmental sensitivity.
+          <span class="pub__venue mono">Integrative and Comparative Biology · <a href="https://doi.org/10.1093/icb/icag081">DOI</a></span>
+        </li>
+        <li>
+          Brook, B., <span class="pub__me">González, B.</span>, Tomasco, I.H., Verzi, D.H. &amp; Martin, G.M. (2025).
+          Within the forest: a new species of <em>Ctenomys</em> from northwestern Patagonia.
+          <span class="pub__venue mono">Journal of Mammalogy 106(1) · <a href="https://doi.org/10.1093/jmammal/gyae101">DOI</a></span>
+        </li>
+        <li>
+          Martin, G.M., <span class="pub__me">González, B.</span>, Brook, F. et al. (2024).
+          Requiem for Argentine mammals: a spatial framework for mapping extinction risk.
+          <span class="pub__venue mono">Journal for Nature Conservation 82 · <a href="https://doi.org/10.1016/j.jnc.2024.126759">DOI</a></span>
+        </li>
+        <li>
+          <span class="pub__me">González, B.</span>, Ferro-Muñoz, N., Calvache, C., Rojas, D. &amp; Martin, G.M. (2024).
+          Mind the gap: new records of <em>Caenolestes</em> in the Western Andes of Colombia challenge its current biogeographic patterns.
+          <span class="pub__venue mono">Journal of Mammalogy · <a href="https://doi.org/10.1093/jmammal/gyae035">DOI</a></span>
+        </li>
+        <li>
+          Frank, F., Volante, J., Calamari, N., Peri, P.L., <span class="pub__me">González, B.</span> et al. (2023).
+          A multi-model approach to explore sustainable food and land use pathways for Argentina.
+          <span class="pub__venue mono">Sustainability Science 18(1) · <a href="https://doi.org/10.1007/s11625-022-01245-5">DOI</a></span>
+        </li>
+        <li>
+          Martin, G.M., <span class="pub__me">González, B.</span> &amp; Monjeau, A. (2021).
+          Continental assessment of South American marsupial conservation priorities using a spatially explicit indicator.
+          <span class="pub__venue mono">Biological Conservation 256 · <a href="https://doi.org/10.1016/j.biocon.2021.109045">DOI</a></span>
+        </li>
+        <li>
+          <span class="pub__me">González, B.</span>, Soria Escobar, A.M., Rojas Díaz, V., Pustovrh, M.C., Monsalve, L.S. &amp; Rougier, G.W. (2020).
+          The embryo of the silky shrew opossum: first description of the embryo of Paucituberculata.
+          <span class="pub__venue mono">Journal of Morphology 281(3) · <a href="https://doi.org/10.1002/jmor.21101">DOI</a></span>
+        </li>
+      </ol>
+
+      <p class="mono" style="margin-top: 1.6rem;">
+        Twenty-plus peer-reviewed papers in total —
+        <a href="https://scholar.google.com/citations?user=XXXX">full list on Google Scholar</a>.
+      </p>
+
+      <p class="eyebrow" style="margin-top: 3.5rem;">Assessments &amp; technical reports</p>
+
+      <ol class="pubs">
+        <li>
+          Gaiarsa, M.P., <span class="pub__me">González, B.</span>, Argueta-Guzmán, M. et al.
+          Pollination in a changing world: the effects of habitat and temperature on the health of California's wild pollinators.
+          <span class="pub__venue mono">California's Fifth Climate Change Assessment, California Natural Resources Agency · in press</span>
+        </li>
+        <li>
+          Martin, G.M. &amp; <span class="pub__me">González, B.</span> (2026).
+          Red List assessments for <em>Caenolestes caniventer</em> and <em>Caenolestes condorensis</em>.
+          <span class="pub__venue mono">IUCN Red List of Threatened Species · <a href="https://dx.doi.org/10.2305/IUCN.UK.2026-1.RLTS.T40521A291090573.en">T40521</a> · <a href="https://dx.doi.org/10.2305/IUCN.UK.2026-1.RLTS.T136743A291090706.en">T136743</a></span>
+        </li>
+        <li>
+          Martin, G.M. &amp; <span class="pub__me">González, B.</span> (2025).
+          Red List assessment for <em>Rhyncholestes raphanurus</em>.
+          <span class="pub__venue mono">IUCN Red List of Threatened Species · <a href="https://dx.doi.org/10.2305/IUCN.UK.2025-2.RLTS.T19710A280099282.en">DOI</a></span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+
+  <!-- ====== CONTACT =========================================== -->
+  <section class="section" id="contact" style="background: var(--paper-2);">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <p class="contact-line">
+        Open to research posts and applied conservation roles —
+        <a href="mailto:baltazargch@gmail.com">get in touch</a>.
+      </p>
+      <p class="mono" style="margin-top: 1.4rem;">
+        baltazargch@gmail.com · Merced, California
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span>© <span id="year">2026</span> Baltazar González</span>
+    <span>
+      <a href="https://github.com/baltazargch">GitHub</a> ·
+      <a href="https://scholar.google.com/citations?user=XXXX">Scholar</a> ·
+      <a href="mailto:baltazargch@gmail.com">Email</a>
+    </span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/projects.js"></script>
+<script src="js/site.js"></script>
+
+</body>
+</html>

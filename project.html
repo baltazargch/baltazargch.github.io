@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Groundwater access mapping, Rift Valley — Baltazar González</title>
+<meta name="description" content="Mapping seasonal water access gaps across 40 rural communities to target drilling budgets.">
+<meta property="og:title" content="Groundwater access mapping, Rift Valley">
+<meta property="og:description" content="Mapping seasonal water access gaps across 40 rural communities.">
+<meta property="og:image" content="https://baltazargonzalez.com/img/share.jpg">
+
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="masthead__name" href="index.html">Baltazar González</a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="section">
+  <div class="wrap">
+
+    <a class="back-link" href="index.html#work">← All work</a>
+
+    <!-- ====== THE INVERTED OPENING ==========================
+         Outcome first, in plain language. Method comes after.
+         An NGO reader gets what they need in ten seconds; an
+         academic reader keeps going.
+         ==================================================== -->
+    <p class="eyebrow">Applied · 2024 · Rift Valley, Kenya</p>
+
+    <h1 style="max-width: 20ch;">Groundwater access mapping, Rift Valley</h1>
+
+    <p style="font-size: 1.2rem; line-height: 1.5; max-width: 52ch; margin-bottom: 2.5rem;">
+      Mapped seasonal water access gaps across 40 rural communities so
+      drilling budgets could be aimed at the villages that run dry first.
+      The county water office now uses the layer in its annual planning cycle.
+    </p>
+
+    <hr class="rule">
+
+    <div class="prose" style="margin-top: 2.5rem;">
+
+      <h3>The problem</h3>
+      <p>
+        Two or three sentences on what was wrong or unknown before this
+        work. Keep it concrete — a specific gap, not a general lament
+        about data scarcity.
+      </p>
+
+      <h3>Approach</h3>
+      <p>
+        What you actually did, in order. Data sources, methods, the
+        judgement calls you had to make. This is where technical depth
+        belongs — the reader who got this far wants it.
+      </p>
+      <ul>
+        <li>Sentinel-2 NDWI time series, 2019–2024, monthly composites</li>
+        <li>Field verification at 40 sites across two dry seasons</li>
+        <li>Household survey data joined at ward level in PostGIS</li>
+      </ul>
+
+      <!-- ====== FIGURES ================================
+           Export your charts and maps as PNG or SVG into
+           the img/ folder and drop them in like this.
+           Always write a caption — it's often the only
+           part that gets read.
+           ============================================= -->
+      <figure class="figure">
+        <img src="img/figure-1.png"
+             alt="Map showing seasonal water availability across 40 study sites, with the driest wards concentrated in the north-east."
+             width="1200" height="800" loading="lazy">
+        <figcaption>
+          Fig. 1 — Months per year with no reliable surface source, by ward.
+          The north-east cluster had not appeared in previous assessments
+          because it falls across two administrative boundaries.
+        </figcaption>
+      </figure>
+
+      <h3>What came of it</h3>
+      <p>
+        Be specific and honest. If it changed a decision, say which one.
+        If it didn't get adopted, say what you learned. Overclaiming is
+        easy to check and expensive when caught.
+      </p>
+
+      <h3>Materials</h3>
+      <ul>
+        <li><a href="#">Code and processing pipeline (GitHub)</a></li>
+        <li><a href="#">Dataset (Zenodo, CC-BY)</a></li>
+        <li><a href="#">Technical report (PDF)</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span>© <span id="year">2026</span> Baltazar González</span>
+    <span><a href="index.html#work">More work</a> · <a href="mailto:baltazargch@gmail.com">Email</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

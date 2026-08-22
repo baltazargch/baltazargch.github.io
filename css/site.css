@@ -1,0 +1,477 @@
+/* ============================================================
+   SITE STYLES
+   Edit colors and fonts in the :root block below — everything
+   else on the site reads from these values.
+   ============================================================ */
+
+:root {
+  /* --- Colour ------------------------------------------------ */
+  --paper:    #EDEFEA;   /* page background — pale survey-sheet grey */
+  --paper-2:  #E3E7E0;   /* slightly darker panels */
+  --ink:      #16211F;   /* headings, primary text */
+  --slate:    #566662;   /* secondary text, captions */
+  --rule:     #C8CFC7;   /* hairlines and borders */
+  --contour:  #1F5F5B;   /* deep teal — links, primary accent */
+  --marker:   #D6336C;   /* surveyor's pink — used sparingly, for emphasis */
+  --white:    #FBFCFA;
+
+  /* --- Type -------------------------------------------------- */
+  --display: "Bricolage Grotesque", "Helvetica Neue", sans-serif;
+  --body:    "Newsreader", Georgia, serif;
+  --mono:    "IBM Plex Mono", "SF Mono", monospace;
+
+  /* --- Layout ------------------------------------------------ */
+  --measure: 68ch;       /* comfortable reading width */
+  --gutter:  clamp(1.25rem, 5vw, 4rem);
+  --max:     1140px;
+}
+
+/* --- Reset ------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: clamp(1.02rem, 0.98rem + 0.2vw, 1.14rem);
+  line-height: 1.62;
+  font-weight: 380;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--contour); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { color: var(--marker); }
+
+/* Keyboard focus — visible everywhere, never removed */
+:focus-visible {
+  outline: 2px solid var(--marker);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --- Typography -------------------------------------------- */
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2.1rem, 1.4rem + 3.2vw, 3.9rem); }
+h2 { font-size: clamp(1.55rem, 1.2rem + 1.6vw, 2.3rem); }
+h3 { font-size: clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem); }
+
+p { margin: 0 0 1.15em; max-width: var(--measure); }
+
+/* The "eyebrow" — small mono label above a section.
+   Used to name the section the way a map sheet names a panel. */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin: 0 0 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+.eyebrow::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* Mono utility text: coordinates, dates, sample IDs */
+.mono {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--slate);
+}
+
+/* --- Layout helpers ---------------------------------------- */
+.wrap {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+.section--tight { padding-block: clamp(2.5rem, 5vw, 4rem); }
+
+.rule { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.masthead__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 60px;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.masthead__name {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav { display: flex; gap: clamp(0.9rem, 2.5vw, 1.9rem); }
+
+.nav a {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-decoration: none;
+  padding-block: 0.35rem;
+  border-bottom: 1.5px solid transparent;
+}
+.nav a:hover { color: var(--ink); border-bottom-color: var(--marker); }
+
+/* ============================================================
+   HERO — the map is the opening statement
+   ============================================================ */
+.hero { position: relative; border-bottom: 1px solid var(--rule); }
+
+#hero-map {
+  height: clamp(420px, 72vh, 680px);
+  width: 100%;
+  background: var(--paper-2);
+  z-index: 1;
+}
+
+/* The legend card floats over the map, the way a legend sits on
+   a printed sheet. On small screens it drops below the map. */
+.legend-card {
+  position: absolute;
+  z-index: 400;
+  left: var(--gutter);
+  bottom: 2.2rem;
+  width: min(430px, calc(100% - (2 * var(--gutter))));
+  background: var(--white);
+  border: 1px solid var(--rule);
+  box-shadow: 0 14px 40px -18px rgba(22, 33, 31, 0.4);
+  padding: 1.6rem 1.7rem 1.5rem;
+}
+
+.legend-card h1 {
+  font-size: clamp(1.75rem, 1.4rem + 1.5vw, 2.5rem);
+  margin-bottom: 0.35rem;
+}
+
+.legend-card__role {
+  font-family: var(--mono);
+  font-size: 0.73rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--marker);
+  margin: 0 0 0.9rem;
+}
+
+.legend-card__line {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 1.1rem;
+  color: var(--ink);
+}
+
+.legend-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid var(--rule);
+}
+.legend-card__meta a { text-decoration: none; font-family: var(--mono); font-size: 0.75rem; }
+.legend-card__meta a:hover { text-decoration: underline; }
+
+@media (max-width: 720px) {
+  #hero-map { height: 52vh; }
+  .legend-card {
+    position: static;
+    width: auto;
+    border-left: 0;
+    border-right: 0;
+    box-shadow: none;
+  }
+}
+
+/* Leaflet popup restyled to match the site */
+.leaflet-popup-content-wrapper {
+  border-radius: 2px;
+  font-family: var(--body);
+  box-shadow: 0 10px 30px -14px rgba(22, 33, 31, 0.5);
+}
+.leaflet-popup-content { margin: 0.85rem 1rem; font-size: 0.9rem; line-height: 1.45; }
+.leaflet-popup-content strong { font-family: var(--display); display: block; margin-bottom: 0.2rem; }
+.leaflet-container { font-family: var(--body); }
+
+/* "View project ↓" link inside a map popup */
+.popup-link {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--contour);
+  border-bottom: 1.5px solid var(--marker);
+  padding-bottom: 1px;
+}
+.popup-link:hover { color: var(--marker); }
+
+/* Brief highlight on the row you just jumped to */
+.project.is-target {
+  background: var(--white);
+  box-shadow: inset 3px 0 0 var(--marker);
+}
+
+/* ============================================================
+   PROJECT LIST — built as a map legend
+   Each row's swatch matches its marker on the map above.
+   ============================================================ */
+.legend-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-bottom: 2.4rem;
+}
+
+.legend-key__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.73rem;
+  letter-spacing: 0.05em;
+  color: var(--slate);
+}
+
+.swatch {
+  width: 11px;
+  height: 11px;
+  flex: none;
+  border: 1.5px solid var(--ink);
+}
+.swatch--field    { background: var(--marker);  border-radius: 50%; }
+.swatch--model    { background: var(--contour); }
+.swatch--applied  { background: var(--white); transform: rotate(45deg); }
+
+.projects { display: grid; gap: 0; }
+
+.project {
+  display: grid;
+  grid-template-columns: 2.2rem minmax(0, 1fr) auto;
+  gap: 0 1.2rem;
+  align-items: start;
+  padding: 1.9rem 1rem;
+  margin-inline: -1rem;      /* keeps text aligned with the rest of the page */
+  border-top: 1px solid var(--rule);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 160ms ease;
+}
+.project:last-child { border-bottom: 1px solid var(--rule); }
+
+.project:hover,
+.project:focus-visible {
+  background: var(--white);
+}
+.project:hover .project__title { color: var(--contour); }
+
+.project__mark { padding-top: 0.45rem; }
+
+.project__title {
+  font-family: var(--display);
+  font-size: clamp(1.2rem, 1.05rem + 0.7vw, 1.55rem);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.35rem;
+  line-height: 1.15;
+}
+
+/* The plain-language outcome line — first thing anyone reads */
+.project__outcome {
+  margin: 0 0 0.7rem;
+  max-width: 58ch;
+  color: var(--ink);
+}
+
+.project__tools {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--slate);
+}
+
+.project__year {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--slate);
+  padding-top: 0.4rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 620px) {
+  .project { grid-template-columns: 1.6rem minmax(0, 1fr); }
+  .project__year { grid-column: 2; padding-top: 0.6rem; }
+}
+
+/* ============================================================
+   PROSE BLOCKS (about, project detail pages)
+   ============================================================ */
+.prose { max-width: var(--measure); }
+.prose h3 { margin-top: 2.2rem; }
+.prose ul { padding-left: 1.1rem; margin-bottom: 1.15em; max-width: var(--measure); }
+.prose li { margin-bottom: 0.4em; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+@media (max-width: 820px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+.portrait {
+  border: 1px solid var(--rule);
+  filter: grayscale(0.15);
+}
+
+/* Skills / tools list */
+.tool-list { list-style: none; padding: 0; margin: 0; }
+.tool-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 0.55rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--slate);
+}
+.tool-list li span:first-child { color: var(--ink); }
+
+/* ============================================================
+   FIGURES — for your charts and maps in project pages
+   ============================================================ */
+.figure { margin: 2.4rem 0; max-width: 100%; }
+.figure img { border: 1px solid var(--rule); background: var(--white); }
+.figure figcaption {
+  font-family: var(--mono);
+  font-size: 0.73rem;
+  line-height: 1.55;
+  color: var(--slate);
+  margin-top: 0.7rem;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--marker);
+  max-width: 60ch;
+}
+.figure--wide { max-width: none; }
+
+/* ============================================================
+   PUBLICATIONS
+   ============================================================ */
+.pubs { list-style: none; padding: 0; margin: 0; counter-reset: pub; }
+.pubs li {
+  padding-block: 1.1rem;
+  border-top: 1px solid var(--rule);
+  max-width: var(--measure);
+}
+.pubs li:last-child { border-bottom: 1px solid var(--rule); }
+.pubs .pub__venue { display: block; margin-top: 0.25rem; }
+.pubs .pub__me { color: var(--ink); font-weight: 600; }
+
+/* ============================================================
+   CONTACT + FOOTER
+   ============================================================ */
+.contact-line {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 1.1rem + 1.8vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  max-width: 20ch;
+}
+.contact-line a { text-decoration-thickness: 2px; }
+
+.footer {
+  border-top: 1px solid var(--rule);
+  padding-block: 2rem 3rem;
+}
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--slate);
+}
+.footer a { color: var(--slate); text-decoration: none; }
+.footer a:hover { color: var(--ink); }
+
+/* Back link on project pages */
+.back-link {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 1.8rem;
+}
+
+/* Skip link for screen readers / keyboard users */
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.7rem 1.1rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  z-index: 999;
+}
+.skip:focus { left: 0; }

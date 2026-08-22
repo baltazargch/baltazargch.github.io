@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pollination under climate extremes, California — Baltazar González</title>
+<meta name="description" content="Bees and the flowers they depend on become vulnerable in different places and at different times of year — which changes where and when pollinator conservation should act.">
+<meta property="og:title" content="Pollination under climate extremes, California">
+<meta property="og:description" content="Bees and their floral resources become vulnerable in different places and seasons — which changes where pollinator conservation should act.">
+<meta property="og:image" content="https://baltazargonzalez.com/img/share.jpg">
+
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="masthead__name" href="index.html">Baltazar González</a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#writing">Writing</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="section">
+  <div class="wrap">
+
+    <a class="back-link" href="index.html#work">← All work</a>
+
+    <p class="eyebrow">Applied · 2024 – present · California, USA</p>
+
+    <h1 style="max-width: 20ch;">Pollination under climate extremes</h1>
+
+    <p style="font-size: 1.2rem; line-height: 1.5; max-width: 54ch; margin-bottom: 2.5rem;">
+      Bees and the flowers they depend on don't become vulnerable in the same
+      places, or in the same months. Conservation planned around the bees
+      alone misses half the problem — and the mismatch is largest exactly
+      where California's agriculture is most exposed.
+    </p>
+
+    <hr class="rule">
+
+    <div class="prose" style="margin-top: 2.5rem;">
+
+      <h3>The problem</h3>
+      <p>
+        Pollinator conservation is usually planned as if bees were the whole
+        system: identify where bee populations are at risk, protect or
+        restore habitat there. But a bee needs flowers blooming at the moment
+        it is foraging. If warming pushes bloom earlier while bee emergence
+        holds, or shifts the two into different parts of the landscape, a site
+        can look secure for the bees and still fail as a pollination system.
+      </p>
+      <p>
+        Nobody had mapped that mismatch at the scale a state agency would need
+        to act on it, and heat waves — not gradual warming — are what
+        California's growers and pollinators actually face.
+      </p>
+
+      <h3>Approach</h3>
+      <p>
+        I modelled vulnerability separately for bees and for their floral
+        resources, then compared the two surfaces in space and across the
+        season rather than collapsing them into a single risk score. The work
+        sits inside an automated, reproducible pipeline, so projections can be
+        re-run when new climate or occurrence data land instead of being
+        rebuilt by hand.
+      </p>
+      <ul>
+        <li>Species distribution models for wild bees and their floral hosts, projected under climate scenarios</li>
+        <li>Phenological overlap assessed month by month, not annually averaged</li>
+        <li>Heat-wave frequency and intensity projections layered over agricultural land use</li>
+        <li>Focused application to the blue orchard bee, a managed native pollinator for California orchards</li>
+      </ul>
+
+      <figure class="figure">
+        <img src="img/figure-1.png"
+             alt="Placeholder for a map of California showing where bee vulnerability and floral resource vulnerability diverge."
+             width="1200" height="800" loading="lazy">
+        <figcaption>
+          Fig. 1 — Replace with your key figure. A caption is often the only
+          part a reader takes in, so state the finding here, not the method.
+        </figcaption>
+      </figure>
+
+      <h3>What came of it</h3>
+      <p>
+        The results change the targeting question from <em>where are bees at
+        risk</em> to <em>where and when does the bee–flower system come
+        apart</em>. Those are different maps, and the second one is the
+        actionable one.
+      </p>
+      <p>
+        The findings are in revision at <em>Communications Biology</em>, and
+        the applied version is going into California's Fifth Climate Change
+        Assessment as a technical report for the California Natural Resources
+        Agency — which is the route by which this reaches state planning
+        rather than only the literature. A parallel strand of the project,
+        led by Argueta-Guzmán, examines how projected heat waves disrupt
+        pollination services in agriculture directly.
+      </p>
+
+      <h3>Collaborators</h3>
+      <p>
+        With Marilia Gaiarsa, Marcos Argueta-Guzmán, Jonathan Mora-Sibaja,
+        Valeria Salerno, Amy Tang, James Crall and Quinn McFrederick
+        (UC Merced, UC Riverside, UW–Madison).
+      </p>
+
+      <h3>Materials</h3>
+      <ul>
+        <li><a href="#">Preprint / paper — add link once published</a></li>
+        <li><a href="#">Analysis code (GitHub) — add link</a></li>
+        <li><a href="https://doi.org/10.1093/icb/icag081">osmiaCAM: the imaging system behind the nest-provisioning data</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span>© <span id="year">2026</span> Baltazar González</span>
+    <span><a href="index.html#work">More work</a> · <a href="mailto:baltazargch@gmail.com">Email</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
