@@ -88,7 +88,7 @@
       marker.bindPopup(
         "<strong>" + escapeHtml(p.title) + "</strong>" +
         escapeHtml(p.outcome) +
-        '<a class="popup-link" href="#project-' + i + '">View project &darr;</a>',
+        '<br><a class="popup-link" href="#project-' + i + '">View project &darr;</a>',
         { closeButton: false, offset: [0, -4] }
       );
 
