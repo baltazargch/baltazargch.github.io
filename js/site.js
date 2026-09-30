@@ -26,7 +26,7 @@
     // Pale basemap that matches the site palette.
     // CARTO's tiles are free to use; the attribution below is required.
     L.tileLayer(
-      "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png??key=cb1_45iz_1_e20bec3b6cce6d33a472bc55",
+      "https://basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png?key=cb1_45iz_1_e20bec3b6cce6d33a472bc55",
       {
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> ' +
